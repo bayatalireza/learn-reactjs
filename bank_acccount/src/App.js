@@ -27,7 +27,7 @@ function App() {
         if(state.balance < 0)return state;
         return {...state, loan: 0, balance: state.balance - state.loan}
       case "closeAccount":
-        if(state.loan > 0 && state.balance < 0)return state
+        if(state.loan > 0 || state.balance < 0)return state
         return initialization
         default:
           throw new Error("unknown;")
